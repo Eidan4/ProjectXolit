@@ -1,0 +1,60 @@
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .hours-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .hour-button {
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px;
+    width: 330px;
+
+    &.selected {
+      background-color: #007bff;
+      color: white;
+    }
+
+    &:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+  }
+
+  .confirm-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      background-color: #d6d6d6;
+      cursor: not-allowed;
+    }
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="reservation-list">
+  <h2>Reservas del Usuario</h2>
+
+  <!-- Mostrar mensaje de error si ocurre algún problema -->
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Mostrar la lista de reservas si existen -->
+  <ul *ngIf="reservations.length > 0">
+    <li *ngFor="let reservation of reservations">
+      <strong>Espacio ID:</strong> {{ reservation.SpaceId }}<br />
+      <strong>Hora de Inicio:</strong> {{ reservation.StartTime | date: 'short' }}<br />
+      <strong>Hora de Fin:</strong> {{ reservation.EndTime | date: 'short' }}<br />
+      <strong>Estado:</strong> {{ reservation.IsActive ? 'Activa' : 'Inactiva' }}<br />
+      <button class="delete-button" (click)="deleteReservation(reservation.Id)">Eliminar</button>
+    </li>
+  </ul>
+
+  <!-- Mostrar un mensaje si no hay reservas -->
+  <p *ngIf="!reservations.length && !errorMessage">No se encontraron reservas.</p>
+</div>

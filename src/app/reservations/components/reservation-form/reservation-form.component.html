@@ -1,0 +1,15 @@
+<div class="reservation-form">
+  <h3>Horas Disponibles para {{ selectedDate | date: 'fullDate' }}</h3>
+  <div *ngIf="availableHours.length > 0; else noHours">
+    <button
+      *ngFor="let hour of availableHours"
+      (click)="selectHour(hour)"
+      class="hour-button"
+    >
+      {{ hour }}
+    </button>
+  </div>
+  <ng-template #noHours>
+    <p>No hay horas disponibles para esta fecha.</p>
+  </ng-template>
+</div>

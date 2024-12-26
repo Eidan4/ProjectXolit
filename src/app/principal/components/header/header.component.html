@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="logo-container">
+    <img
+      src="https://xolit.com/wp-content/uploads/2023/06/Logo-Solo-scaled.webp"
+      alt="Logo"
+      class="logo"
+    />
+  </div>
+  <div class="actions-container">
+    <button
+      *ngIf="isActiveLogin"
+      class="login-button"
+      (click)="navigateToLogin()">
+      Iniciar Sesión
+    </button>
+  </div>
+</header>

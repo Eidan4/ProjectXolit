@@ -1,0 +1,38 @@
+.reservations-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 3% 20%;
+  min-width: 421px;
+  /* Diseño para pantallas pequeñas */
+  @media screen and (max-width: 1330px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+  }
+}
+
+.calendar {
+  flex: 1;
+  max-width: 45%;
+
+  /* Diseño responsivo */
+  @media screen and (max-width: 1330px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.reservation-form {
+  flex: 2;
+  max-width: 35%;
+
+  /* Diseño responsivo */
+  @media screen and (max-width: 1330px) {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

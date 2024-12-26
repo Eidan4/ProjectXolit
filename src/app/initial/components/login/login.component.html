@@ -1,0 +1,39 @@
+<app-header [isActiveLogin]="false"></app-header>
+<div class="container" [ngClass]="{ 'right-panel-active': isRightPanelActive }">
+  <!-- Formulario de registro -->
+  <div class="form-container sign-up-container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUpSubmit()">
+      <h1>Crear Cuenta</h1>
+      <input type="text" formControlName="name" placeholder="Nombre" required maxlength="50" />
+      <input type="email" formControlName="email" placeholder="Correo Electrónico" required maxlength="50" />
+      <input type="password" formControlName="password" placeholder="Contraseña" required maxlength="50" />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <!-- Formulario de inicio de sesión -->
+  <div class="form-container sign-in-container">
+    <form [formGroup]="signInForm" (ngSubmit)="onSignInSubmit()">
+      <h1>Iniciar Sesión</h1>
+      <input type="email" formControlName="email" placeholder="Correo Electrónico" required maxlength="50" />
+      <input type="password" formControlName="password" placeholder="Contraseña" required maxlength="50" />
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+
+  <!-- Contenedor del overlay -->
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>¡Bienvenido de nuevo!</h1>
+        <p>Para mantenerse conectado, por favor inicie sesión con su información personal</p>
+        <button class="ghost" (click)="activateSignIn()">Iniciar Sesión</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>¡Hola, Amigo!</h1>
+        <p>Proporciona tu información personal y comienza esta experiencia única con nosotros.</p>
+        <button class="ghost" (click)="activateSignUp()">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>

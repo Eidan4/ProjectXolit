@@ -1,0 +1,12 @@
+<app-header [isActiveLogin]="false"></app-header>
+<div class="reservations-main">
+  <app-calendar class="calendar" (dateSelected)="onDateSelected($event)"></app-calendar>
+  <app-reservation-form
+    [selectedDate]="selectedDate"
+    [spaceId]="spaceId"
+    [userId]="userId"
+    (reservationCreated)="reservationList.loadReservations()"
+    class="reservation-form">
+  </app-reservation-form>
+</div>
+<app-reservation-list #reservationList [userId]="userId"></app-reservation-list>
